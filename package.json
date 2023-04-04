@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/vasyl-horaichuk/node-js-practice/issues"
   },
-  "homepage": "https://github.com/vasyl-horaichuk/node-js-practice#readme"
+  "homepage": "https://github.com/vasyl-horaichuk/node-js-practice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
