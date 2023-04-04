@@ -9,8 +9,10 @@ const createFile = (filename, content) => {
         filename,
         content
     }
+    
     const result = dataValidator(data);
-    console.log(data);
+    console.log(result.error.details);
+    //chalk "Please specify key "parametr""
 
 }
 
