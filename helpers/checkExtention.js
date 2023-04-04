@@ -12,3 +12,5 @@ const checkExtantion = filename => {
   };
 };
 module.exports = checkExtantion;
+
+// node index --action create --filename file.json --content {"name": "vasyl"}

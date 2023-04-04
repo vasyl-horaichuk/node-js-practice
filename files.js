@@ -21,7 +21,7 @@ const createFile = (filename, content) => {
     return;
   }
   const { permission, extantion } = !checkExtantion(filename);
-  if (permission) {
+  if (!permission) {
     console.log(
       chalk.red(`Sorry, this app doesn't support ${extantion} extension`)
     );
