@@ -20,7 +20,12 @@ const createFile = (filename, content) => {
     );
     return;
   }
-  checkExtantion;
+  const checkExtResult = !checkExtantion(filename);
+  if (checkExtResult.permission) {
+    console.log(
+      chalk.red(`Sorry, this app doesn't support "${checkExtResult.filename}"`)
+    );
+  }
 };
 
 module.exports = { createFile };
