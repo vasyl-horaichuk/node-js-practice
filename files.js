@@ -11,9 +11,12 @@ const createFile = (filename, content) => {
     }
     
     const result = dataValidator(data);
-    console.log(result.error.details);
-    //chalk "Please specify key "parametr""
 
+    if (result.error) { 
+        console.log(chalk.red(`Please specify key "${result.error.details[0].context.key}" parameter`));
+    }
+    
+    // console.log(result.error.details);
 }
 
 module.exports = { createFile };
