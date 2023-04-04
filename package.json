@@ -1,0 +1,21 @@
+{
+  "name": "js-practice",
+  "version": "1.0.0",
+  "description": "Практика Бекенд",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "start:watch": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasyl-horaichuk/node-js-practice.git"
+  },
+  "author": "Vasyl Horaichuk <vg.createam@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasyl-horaichuk/node-js-practice/issues"
+  },
+  "homepage": "https://github.com/vasyl-horaichuk/node-js-practice#readme"
+}
