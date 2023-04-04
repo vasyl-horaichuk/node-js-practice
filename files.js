@@ -20,10 +20,10 @@ const createFile = (filename, content) => {
     );
     return;
   }
-  const checkExtResult = !checkExtantion(filename);
-  if (checkExtResult.permission) {
+  const { permission, extantion } = !checkExtantion(filename);
+  if (permission) {
     console.log(
-      chalk.red(`Sorry, this app doesn't support "${checkExtResult.filename}"`)
+      chalk.red(`Sorry, this app doesn't support ${extantion} extension`)
     );
   }
 };

@@ -1,13 +1,14 @@
 const checkExtantion = filename => {
-  const EXTENTIONs = ['txt', 'json', 'xml', 'js', 'html', 'css'];
+  const EXTENSIONS = ['txt', 'json', 'xml', 'js', 'html', 'css'];
 
   const index = filename.lastIndexOf('.');
   const slicedExts = filename.slice(index + 1);
 
+  console.log(slicedExts);
+
   return {
-    filename: slicedExts,
-    permission: EXTENTIONS.includes(slicedExts),
+    extantion: slicedExts,
+    permission: EXTENSIONS.includes(slicedExts),
   };
 };
-
-checkExtantion('file.js');
+module.exports = checkExtantion;
