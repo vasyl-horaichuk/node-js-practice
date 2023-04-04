@@ -1,4 +1,4 @@
-const checkExtantion = filename => {
+const checkExtansion = filename => {
   const EXTENSIONS = ['txt', 'json', 'xml', 'js', 'html', 'css'];
 
   const index = filename.lastIndexOf('.');
@@ -7,10 +7,10 @@ const checkExtantion = filename => {
   console.log(slicedExts);
 
   return {
-    extantion: slicedExts,
+    extansion: slicedExts,
     permission: EXTENSIONS.includes(slicedExts),
   };
 };
-module.exports = checkExtantion;
+module.exports = checkExtansion;
 
-// node index --action create --filename file.json --content {"name": "vasyl"}
+// node index --action create --filename file.json --content {"name":"vasyl"}

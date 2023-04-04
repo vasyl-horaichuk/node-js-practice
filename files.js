@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const chalk = require('chalk');
 const dataValidator = require('./helpers/dataValidator');
-const checkExtantion = require('./helpers/checkExtention');
+const checkExtansion = require('./helpers/checkExtension');
 
 const createFile = (filename, content) => {
   const data = {
@@ -20,10 +20,10 @@ const createFile = (filename, content) => {
     );
     return;
   }
-  const { permission, extantion } = !checkExtantion(filename);
+  const { permission, extansion } = checkExtansion(filename);
   if (!permission) {
     console.log(
-      chalk.red(`Sorry, this app doesn't support ${extantion} extension`)
+      chalk.red(`Sorry, this app doesn't support ${extansion} extension`)
     );
   }
 };
