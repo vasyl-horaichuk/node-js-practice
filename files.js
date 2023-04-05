@@ -49,6 +49,7 @@ const getFiles = () => {
 
 const getFile = filename => {
   const pathGetFile = path.join(__dirname, './files');
+  const pathGetReadFile = path.join(__dirname, './files', filename);
 
   fs.readdir(pathGetFile)
     .then(files => {
@@ -57,7 +58,8 @@ const getFile = filename => {
           chalk.red(`No file with filename: ${filename} in this directory!`)
         );
       }
-      fs.readFile(pathGetFile, 'utf-8', filename).then(files => {
+      fs.readFile(pathGetReadFile, 'utf-8').then(file => {
+        console.log(file);
         console.log({ filename, extansion, content });
       });
     })
@@ -68,4 +70,4 @@ module.exports = { getFile, getFiles, createFile };
 
 // node index --action create --filename file.js --content const text = "text"
 // node index --action get --filename file.js
-// node index --action find --filename abc.js
+// node index --action find --filename file.js
