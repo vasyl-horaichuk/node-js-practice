@@ -38,9 +38,9 @@ const createFile = (filename, content) => {
 };
 
 const getFiles = () => {
-  const pathGetFile = path.join(__dirname, './files');
+  const pathGetFiles = path.join(__dirname, './files');
 
-  fs.readdir(pathGetFile)
+  fs.readdir(pathGetFiles)
     .then(files => {
       if (!files.length) {
         console.log(chalk.red('Not files here!'));
@@ -50,7 +50,17 @@ const getFiles = () => {
     .catch(console.error);
 };
 
-module.exports = { getFiles, createFile };
+const getFile = () => {
+  const pathGetFile = path.join(__dirname, './files');
+
+  fs.readdir(pathGetFile)
+    .then(files => {
+      files.includes(filename) && console.log('');
+    })
+    .catch(console.error);
+};
+
+module.exports = { getFile, getFiles, createFile };
 
 // node index --action create --filename file.js --content const text = "text"
 // node index --action get --filename file.js
