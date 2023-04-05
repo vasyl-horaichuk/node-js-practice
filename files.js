@@ -48,16 +48,18 @@ const getFiles = () => {
 };
 
 const getFile = filename => {
-  // const pathGetFile = path.join(__dirname, './files');
+  const pathGetFile = path.join(__dirname, './files');
 
-  fs.readdir(path.join(__dirname, './files')).then(files => {
-    files.includes(filename)
-      ? console.log()
-      : console.log(
+  fs.readdir(pathGetFile)
+    .then(files => {
+      if (!files.includes(filename)) {
+        console.log(
           chalk.red(`No file with filename: ${filename} in this directory!`)
         );
-  });
-  // .catch(console.error);
+      }
+      fs.readFile(pathGetFile, 'utf-8', filename).then(files => {});
+    })
+    .catch(console.error);
 };
 
 module.exports = { getFile, getFiles, createFile };
