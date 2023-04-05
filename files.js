@@ -48,9 +48,9 @@ const getFiles = () => {
 };
 
 const getFile = filename => {
-  const pathGetFile = path.join(__dirname, './files');
+  // const pathGetFile = path.join(__dirname, './files');
 
-  fs.readdir(pathGetFile).then(files => {
+  fs.readdir(path.join(__dirname, './files')).then(files => {
     files.includes(filename)
       ? console.log()
       : console.log(

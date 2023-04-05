@@ -12,7 +12,7 @@ function invokeAction({ action, filename, content }) {
       break;
 
     case 'find':
-      getFile();
+      getFile(filename);
       break;
 
     default:
