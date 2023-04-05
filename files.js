@@ -3,6 +3,9 @@ const path = require('path');
 const chalk = require('chalk');
 const dataValidator = require('./helpers/dataValidator');
 const checkExtansion = require('./helpers/checkExtension');
+const { writeFile } = require('fs');
+const { isUtf8 } = require('buffer');
+const { option } = require('yargs');
 
 const createFile = (filename, content) => {
   const data = {
@@ -26,6 +29,28 @@ const createFile = (filename, content) => {
       chalk.red(`Sorry, this app doesn't support ${extansion} extension`)
     );
   }
+
+  const pathWriteFile = path.join(__dirname, './files', filename);
+
+  fs.writeFile(pathWriteFile, content, 'utf-8')
+    .then(console.log(chalk.greenBright('File was successfully created!')))
+    .catch(console.error);
 };
 
-module.exports = { createFile };
+const getFiles = () => {
+  const pathGetFile = path.join(__dirname, './files');
+
+  fs.readdir(pathGetFile)
+    .then(files => {
+      if (!files.length) {
+        console.log(chalk.red('Not files here!'));
+      }
+      console.log(files);
+    })
+    .catch(console.error);
+};
+
+module.exports = { getFiles, createFile };
+
+// node index --action create --filename file.js --content const text = "text"
+// node index --action get --filename file.js
