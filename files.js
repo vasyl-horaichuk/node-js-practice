@@ -3,9 +3,6 @@ const path = require('path');
 const chalk = require('chalk');
 const dataValidator = require('./helpers/dataValidator');
 const checkExtansion = require('./helpers/checkExtension');
-const { writeFile } = require('fs');
-const { isUtf8 } = require('buffer');
-const { option } = require('yargs');
 
 const createFile = (filename, content) => {
   const data = {
