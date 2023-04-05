@@ -50,17 +50,21 @@ const getFiles = () => {
     .catch(console.error);
 };
 
-const getFile = () => {
+const getFile = filename => {
   const pathGetFile = path.join(__dirname, './files');
 
-  fs.readdir(pathGetFile)
-    .then(files => {
-      files.includes(filename) && console.log('');
-    })
-    .catch(console.error);
+  fs.readdir(pathGetFile).then(files => {
+    files.includes(filename)
+      ? console.log()
+      : console.log(
+          chalk.red(`No file with filename: ${filename} in this directory!`)
+        );
+  });
+  // .catch(console.error);
 };
 
 module.exports = { getFile, getFiles, createFile };
 
 // node index --action create --filename file.js --content const text = "text"
 // node index --action get --filename file.js
+// node index --action find --filename abc.js
