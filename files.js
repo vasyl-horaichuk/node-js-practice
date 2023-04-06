@@ -58,9 +58,11 @@ const getFile = filename => {
           chalk.red(`No file with filename: ${filename} in this directory!`)
         );
       }
-      fs.readFile(pathGetReadFile, 'utf-8').then(file => {
-        console.log(file);
-        console.log({ filename, extansion, content });
+      fs.readFile(pathGetReadFile, 'utf-8').then(content => {
+        const index = filename.lastIndexOf('.');
+        const name = filename.slice(0, index);
+        const extension = filename.slice(index + 1);
+        console.log({ name, extension, content });
       });
     })
     .catch(console.error);
